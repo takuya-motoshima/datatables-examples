@@ -45,8 +45,10 @@
     table.dataTable thead .sorting_asc_disabled:after,
     table.dataTable thead .sorting_desc_disabled:before,
     table.dataTable thead .sorting_desc_disabled:after {
+      top: 50% !important;
       right: .5em !important;
-      bottom: .5rem !important;
+      bottom: initial !important;
+      transform: translateY(-50%);
       font-family: "Font Awesome 5 Free";
     }
 
