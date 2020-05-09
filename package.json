@@ -1,0 +1,35 @@
+{
+  "name": "datatables-examples",
+  "version": "1.0.0",
+  "description": "DataTables examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takuya-motoshima/datatables-examples.git"
+  },
+  "keywords": [
+    "browser",
+    "javascript",
+    "js"
+  ],
+  "author": "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takuya-motoshima/datatables-examples/issues",
+    "email": "developer.takuyamotoshima@gmail.com"
+  },
+  "homepage": "https://github.com/takuya-motoshima/datatables-examples#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
+    "datatables.net": "^1.10.20",
+    "datatables.net-bs4": "^1.10.20",
+    "datatables.net-fixedcolumns": "^3.3.0",
+    "datatables.net-fixedcolumns-bs4": "^3.3.0",
+    "datatables.net-fixedheader": "^3.1.6",
+    "jquery": "^3.4.1"
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataTables examples</title>
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <style>
+
+    html {
+      font-size: 13px;
+    }
+
+    /* Search filter */
+    .dataTables_filter label {
+      display: flex;
+      align-items: center;
+    }
+
+      .dataTables_filter label input[type='search'] {
+        flex: 1;
+      }
+
+    /* Number of displays */
+    .dataTables_length label {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+      .dataTables_length label select {
+        margin: 0 .5em;
+      }
+
+    /* Sort icon */
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before,
+    table.dataTable thead .sorting_desc_disabled:after {
+      top: 12px;
+      right: 0.5em;
+      font-family: "Font Awesome 5 Free";
+    }
+
+    /* Ascending sort icon */
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc_disabled:before {
+      content: "\f0de";
+    }
+
+    /* Descending sort icon */
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:after {
+      content: "\f0dd";
+    }
+
+    /* Active sort icon */
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_desc:after {
+      color: #16b;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container mt-4">
+    <table id="table" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Age</th>
+          <th>Start date</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+  <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script>
+    (async () => {
+
+      // Data table setup
+      const dt = $('#table').DataTable({
+        columnDefs: [
+          { data: 'name', targets: 0 },
+          { data: 'position', targets: 1 },
+          { data: 'office', targets: 2 },
+          { data: 'age', targets: 3 },
+          { data: 'date', targets: 4 },
+          { data: 'salary', targets: 5 }
+        ],
+        dom: 
+          `<'row'<'col-sm-12 col-md-6'f><'col-sm-12 col-md-6'l>>
+          <'row'<'col-sm-12'tr>>
+          <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`
+      });
+
+      // Load data from server
+      const rows = await $.getJSON('data.json');
+
+      // Show data rows
+      for (let row of rows) {
+        dt.row.add(row);
+      }
+      dt.draw(false);
+    })();
+  </script>
+</body>
+</html>
