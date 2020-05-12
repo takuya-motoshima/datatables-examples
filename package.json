@@ -30,6 +30,8 @@
     "datatables.net-fixedcolumns": "^3.3.0",
     "datatables.net-fixedcolumns-bs4": "^3.3.0",
     "datatables.net-fixedheader": "^3.1.6",
-    "jquery": "^3.4.1"
+    "datatables.net-plugins": "^1.10.20",
+    "jquery": "^3.4.1",
+    "js-cookie": "^2.2.1"
   }
 }

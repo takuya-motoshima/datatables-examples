@@ -7,81 +7,96 @@
   <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  <style>
-
-    html {
-      font-size: 13px;
-    }
-
-    /* Search filter */
-    .dataTables_filter label {
-      display: flex;
-      align-items: center;
-    }
-
-      .dataTables_filter label input[type='search'] {
-        flex: 1;
-      }
-
-    /* Number of displays */
-    .dataTables_length label {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-      .dataTables_length label select {
-        margin: 0 .5em;
-      }
-
-    /* Sort icon */
-    table.dataTable thead .sorting:before,
-    table.dataTable thead .sorting:after,
-    table.dataTable thead .sorting_asc:before,
-    table.dataTable thead .sorting_asc:after,
-    table.dataTable thead .sorting_desc:before,
-    table.dataTable thead .sorting_desc:after,
-    table.dataTable thead .sorting_asc_disabled:before,
-    table.dataTable thead .sorting_asc_disabled:after,
-    table.dataTable thead .sorting_desc_disabled:before,
-    table.dataTable thead .sorting_desc_disabled:after {
-      top: 50% !important;
-      right: .5em !important;
-      bottom: initial !important;
-      transform: translateY(-50%);
-      font-family: "Font Awesome 5 Free";
-    }
-
-    /* Ascending sort icon */
-    table.dataTable thead .sorting:before,
-    table.dataTable thead .sorting_asc:before,
-    table.dataTable thead .sorting_desc:before,
-    table.dataTable thead .sorting_asc_disabled:before,
-    table.dataTable thead .sorting_desc_disabled:before {
-      content: "\f0de";
-    }
-
-    /* Descending sort icon */
-    table.dataTable thead .sorting:after,
-    table.dataTable thead .sorting_asc:after,
-    table.dataTable thead .sorting_desc:after,
-    table.dataTable thead .sorting_asc_disabled:after,
-    table.dataTable thead .sorting_desc_disabled:after {
-      content: "\f0dd";
-    }
-
-    /* Active sort icon */
-    table.dataTable thead .sorting_asc:before,
-    table.dataTable thead .sorting_desc:after {
-      color: #16b;
-    }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
 
   <div class="container mt-4">
+
+    <div class="form-group form-inline align-items-center">
+      <label class="mr-2">Language:</label>
+      <select id="lang" class="form-control w-auto">
+        <option value="Afrikaans">Afrikaans</option>
+        <option value="Albanian">Albanian</option>
+        <option value="Amharic">Amharic</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Armenian">Armenian</option>
+        <option value="Azerbaijan">Azerbaijan</option>
+        <option value="Bangla">Bangla</option>
+        <option value="Basque">Basque</option>
+        <option value="Belarusian">Belarusian</option>
+        <option value="Bulgarian">Bulgarian</option>
+        <option value="Catalan">Catalan</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Chinese-traditional">traditional</option>
+        <option value="Croatian">Croatian</option>
+        <option value="Czech">Czech</option>
+        <option value="Danish">Danish</option>
+        <option value="Dutch">Dutch</option>
+        <option value="English" selected>English</option>
+        <option value="Esperanto">Esperanto</option>
+        <option value="Estonian">Estonian</option>
+        <option value="Filipino">Filipino</option>
+        <option value="Finnish">Finnish</option>
+        <option value="French">French</option>
+        <option value="Galician">Galician</option>
+        <option value="Georgian">Georgian</option>
+        <option value="German">German</option>
+        <option value="Greek">Greek</option>
+        <option value="Gujarati">Gujarati</option>
+        <option value="Hebrew">Hebrew</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Hungarian">Hungarian</option>
+        <option value="Icelandic">Icelandic</option>
+        <option value="Indonesian-Alternative">Alternative</option>
+        <option value="Indonesian">Indonesian</option>
+        <option value="Irish">Irish</option>
+        <option value="Italian">Italian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Kazakh">Kazakh</option>
+        <option value="Khmer">Khmer</option>
+        <option value="Korean">Korean</option>
+        <option value="Kurdish">Kurdish</option>
+        <option value="Kyrgyz">Kyrgyz</option>
+        <option value="Lao">Lao</option>
+        <option value="Latvian">Latvian</option>
+        <option value="Lithuanian">Lithuanian</option>
+        <option value="Macedonian">Macedonian</option>
+        <option value="Malay">Malay</option>
+        <option value="Mongolian">Mongolian</option>
+        <option value="Nepali">Nepali</option>
+        <option value="Norwegian-Bokmal">Bokmal</option>
+        <option value="Norwegian-Nynorsk">Nynorsk</option>
+        <option value="Pashto">Pashto</option>
+        <option value="Persian">Persian</option>
+        <option value="Polish">Polish</option>
+        <option value="Portuguese-Brasil">Brasil</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Romanian">Romanian</option>
+        <option value="Russian">Russian</option>
+        <option value="Serbian">Serbian</option>
+        <option value="Serbian_latin">Serbian_latin</option>
+        <option value="Sinhala">Sinhala</option>
+        <option value="Slovak">Slovak</option>
+        <option value="Slovenian">Slovenian</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Swahili">Swahili</option>
+        <option value="Swedish">Swedish</option>
+        <option value="Tajik">Tajik</option>
+        <option value="Tamil">Tamil</option>
+        <option value="telugu">telugu</option>
+        <option value="Thai">Thai</option>
+        <option value="Turkish">Turkish</option>
+        <option value="Ukrainian">Ukrainian</option>
+        <option value="Urdu">Urdu</option>
+        <option value="Uzbek">Uzbek</option>
+        <option value="Vietnamese">Vietnamese</option>
+        <option value="Welsh">Welsh</option>
+      </select>
+    </div>
+
     <table id="table" class="table table-sm table-striped table-bordered">
+
       <thead>
         <tr>
           <th>Name</th>
@@ -99,34 +114,7 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
   <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script>
-    (async () => {
-
-      // Data table setup
-      const dt = $('#table').DataTable({
-        columnDefs: [
-          { data: 'name', targets: 0 },
-          { data: 'position', targets: 1 },
-          { data: 'office', targets: 2 },
-          { data: 'age', targets: 3 },
-          { data: 'date', targets: 4 },
-          { data: 'salary', targets: 5 }
-        ],
-        dom: 
-          `<'row'<'col-sm-12 col-md-6'f><'col-sm-12 col-md-6'l>>
-          <'row'<'col-sm-12'tr>>
-          <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`
-      });
-
-      // Load data from server
-      const rows = await $.getJSON('data.json');
-
-      // Show data rows
-      for (let row of rows) {
-        dt.row.add(row);
-      }
-      dt.draw(false);
-    })();
-  </script>
+  <script src="node_modules/js-cookie/src/js.cookie.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 </html>
